@@ -49,5 +49,16 @@ namespace Exo03RechercheVille.MSTest
 
             CollectionAssert.AreEquivalent(new List<string>() { "Valence", "Vancouver" }, resultat);
         }
+
+        /// <summary>
+        /// La fonctionnalité de recherche devrait également fonctionner lorsque le texte de recherche n'est qu'une partie d'un nom de ville
+        /// /// </summary>
+        [TestMethod]
+        public void When_SearchTextLength_GreaterThanOrEquals2_Then_ReturnCitiesContainingSearchText()
+        {
+            List<string> resultat = _rechercheVille.Rechercher("ape");
+
+            CollectionAssert.AreEquivalent(new List<string>() { "Budapest" }, resultat);
+        }
     }
 }
