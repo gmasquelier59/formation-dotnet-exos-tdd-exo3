@@ -74,7 +74,7 @@ namespace Exo03RechercheVille.MSTest
         }
 
         /// <summary>
-        /// Si le texte de recherche est un « * » (astérisque), il doit renvoyer tous les noms de ville.
+        /// Si le texte de recherche est une ville qui n'existe pas dans la liste, doit levée NotFoundException
         /// </summary>
         [TestMethod]
         public void When_NotCitiesFound_Then_ThrowNotFoundException()
