@@ -26,13 +26,26 @@ namespace Exo03RechercheVille.MSTest
             Assert.ThrowsException<NotFoundException>(() => _rechercheVille.Rechercher("A"));
         }
 
+        /// <summary>
         /// Si le texte de recherche est égal ou supérieur à 2 caractères, il doit renvoyer tous les noms de ville commençant par le texte de recherche exact.
+        /// </summary>
         [TestMethod]
         public void When_SearchTextLength_GreaterThanOrEquals2_Then_ReturnCitiesStartingWithSearchText()
         {
             List<string> resultat = _rechercheVille.Rechercher("Pa");
 
             CollectionAssert.AreEquivalent(new List<string>() { "Paris" }, resultat);
+        }
+
+        /// <summary>
+        /// La fonctionnalité de recherche doit être insensible à la casse
+        /// /// </summary>
+        [TestMethod]
+        public void ShouldBe_CaseInsensitive()
+        {
+            List<string> resultat = _rechercheVille.Rechercher("va");
+
+            CollectionAssert.AreEquivalent(new List<string>() { "Valence", "Vancouvert" }, resultat);
         }
     }
 }
