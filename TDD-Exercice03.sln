@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo03RechercheVille", "Exo03RechercheVille\Exo03RechercheVille.csproj", "{11C66A37-A6E8-4392-AF81-A7D311808D61}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exo03RechercheVille.MSTest", "Exo03RechercheVille.MSTest\Exo03RechercheVille.MSTest.csproj", "{083919F7-EC46-4CB4-8168-AE61DBDA3817}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Éléments de solution", "Éléments de solution", "{45DD1F07-5D46-42D0-8218-F698ABF3C405}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11C66A37-A6E8-4392-AF81-A7D311808D61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C66A37-A6E8-4392-AF81-A7D311808D61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C66A37-A6E8-4392-AF81-A7D311808D61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C66A37-A6E8-4392-AF81-A7D311808D61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{083919F7-EC46-4CB4-8168-AE61DBDA3817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{083919F7-EC46-4CB4-8168-AE61DBDA3817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{083919F7-EC46-4CB4-8168-AE61DBDA3817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{083919F7-EC46-4CB4-8168-AE61DBDA3817}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {26614596-C01C-421C-BDCC-5B7D38D26A99}
+	EndGlobalSection
+EndGlobal
