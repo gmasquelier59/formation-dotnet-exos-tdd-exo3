@@ -13,6 +13,9 @@ namespace Exo03RechercheVille
 
         public List<String> Rechercher(String mot)
         {
+            if (mot == "*")
+                return _villes;
+
             if (mot.Length < 2)
                 throw new NotFoundException();
 
