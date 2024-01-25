@@ -18,7 +18,7 @@ namespace Exo03RechercheVille.MSTest
         [TestMethod]
         public void When_SearchTextLength_LessThan2_Then_ThrowNotFoundException()
         {
-            throw new NotImplementedException();
+            Assert.ThrowsException<NotFoundException>(() => _rechercheVille.Rechercher("A"));
         }
     }
 }

@@ -6,7 +6,10 @@
 
         public List<String> Rechercher(String mot)
         {
-            throw new NotImplementedException();
+            if (mot.Length < 2)
+                throw new NotFoundException();
+
+            return new List<string>();
         }
     }
 }
