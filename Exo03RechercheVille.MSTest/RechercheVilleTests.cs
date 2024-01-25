@@ -12,6 +12,8 @@ namespace Exo03RechercheVille.MSTest
 
         private void Setup()
         {
+            //  Villes de test pour être certain des résultats de test
+
             List<string> villesTest = new List<string>() { "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul" };
 
             _rechercheVille = new RechercheVille(villesTest);
@@ -45,7 +47,7 @@ namespace Exo03RechercheVille.MSTest
         {
             List<string> resultat = _rechercheVille.Rechercher("va");
 
-            CollectionAssert.AreEquivalent(new List<string>() { "Valence", "Vancouvert" }, resultat);
+            CollectionAssert.AreEquivalent(new List<string>() { "Valence", "Vancouver" }, resultat);
         }
     }
 }
