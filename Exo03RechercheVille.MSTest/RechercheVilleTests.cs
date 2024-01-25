@@ -5,6 +5,8 @@ namespace Exo03RechercheVille.MSTest
     {
         private RechercheVille _rechercheVille;
 
+        private List<string> _villesTest;
+
         public RechercheVilleTests()
         {
             Setup();
@@ -13,10 +15,9 @@ namespace Exo03RechercheVille.MSTest
         private void Setup()
         {
             //  Villes de test pour être certain des résultats de test
+            _villesTest = new List<string>() { "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul" };
 
-            List<string> villesTest = new List<string>() { "Paris", "Budapest", "Skopje", "Rotterdam", "Valence", "Vancouver", "Amsterdam", "Vienne", "Sydney", "New York", "Londres", "Bangkok", "Hong Kong", "Dubaï", "Rome", "Istanbul" };
-
-            _rechercheVille = new RechercheVille(villesTest);
+            _rechercheVille = new RechercheVille(_villesTest);
         }
 
         /// <summary>
@@ -41,7 +42,7 @@ namespace Exo03RechercheVille.MSTest
 
         /// <summary>
         /// La fonctionnalité de recherche doit être insensible à la casse
-        /// /// </summary>
+        /// </summary>
         [TestMethod]
         public void ShouldBe_CaseInsensitive()
         {
@@ -52,13 +53,24 @@ namespace Exo03RechercheVille.MSTest
 
         /// <summary>
         /// La fonctionnalité de recherche devrait également fonctionner lorsque le texte de recherche n'est qu'une partie d'un nom de ville
-        /// /// </summary>
+        /// </summary>
         [TestMethod]
         public void When_SearchTextLength_GreaterThanOrEquals2_Then_ReturnCitiesContainingSearchText()
         {
             List<string> resultat = _rechercheVille.Rechercher("ape");
 
             CollectionAssert.AreEquivalent(new List<string>() { "Budapest" }, resultat);
+        }
+
+        /// <summary>
+        /// Si le texte de recherche est un « * » (astérisque), il doit renvoyer tous les noms de ville.
+        /// </summary>
+        [TestMethod]
+        public void When_SearchText_IsStar_Then_ReturnAllCities()
+        {
+            List<string> resultat = _rechercheVille.Rechercher("*");
+
+            CollectionAssert.AreEquivalent(_villesTest, resultat);
         }
     }
 }
