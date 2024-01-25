@@ -16,7 +16,7 @@ namespace Exo03RechercheVille
             if (mot.Length < 2)
                 throw new NotFoundException();
 
-            return _villes.FindAll(s => s.ToLower().StartsWith(mot.ToLower())).ToList();
+            return _villes.FindAll(s => s.ToLower().Contains(mot.ToLower())).ToList();
         }
     }
 }
