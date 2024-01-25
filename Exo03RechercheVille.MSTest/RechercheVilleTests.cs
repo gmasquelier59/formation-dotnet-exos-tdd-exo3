@@ -72,5 +72,14 @@ namespace Exo03RechercheVille.MSTest
 
             CollectionAssert.AreEquivalent(_villesTest, resultat);
         }
+
+        /// <summary>
+        /// Si le texte de recherche est un « * » (astérisque), il doit renvoyer tous les noms de ville.
+        /// </summary>
+        [TestMethod]
+        public void When_NotCitiesFound_Then_ThrowNotFoundException()
+        {
+            Assert.ThrowsException<NotFoundException>(() => _rechercheVille.Rechercher("dertcfgvybuhjnik"));
+        }
     }
 }
